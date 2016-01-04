@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 - Testprojekt</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+    <link rel="stylesheet" href="css/base_style.css" />
+    <script type="text/javascript">
+        var menu_opened = false;
+        function open_menu(){
+            if (menu_opened){
+                document.getElementById("navigation_list").style.height = "0";
+                document.getElementById("navigation_list").style.display = "none";
+            }else{
+                document.getElementById("navigation_list").style.display = "block";
+                document.getElementById("navigation_list").style.height = "auto";
+            }
+            menu_opened = !menu_opened;
+        }
+        function show_tube(vidid){
+            document.getElementById("youtube").innerHTML = ''+
+                '<div class="videoWrapper">'+
+                    '<object width="480" height="295">'+
+                        '<param name="movie" value="http://www.youtube.com/v/'+vidid+'&hl=de&fs=1"></param>'+
+                        '<param name="allowFullScreen" value="true"></param>'+
+                        '<param name="allowscriptaccess" value="always"></param>'+
+                        '<embed src="http://www.youtube.com/v/'+vidid+'&hl=de&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed>'+
+                    '</object>'+
+                '</div>';
+        }
+        function go_get(){
+            document.getElementById("videoWrapper").style.display = "none";
+
+            var base_url = 'http://www.youtube.com/embed?listType=search&list=' ;
+            var search_field = document.getElementById('searchfield').value ;
+            var target_url = base_url + search_field ;
+            var ifr = document.getElementById('youtube_iframe');
+            ifr.style.display = "block";
+            ifr.src = target_url ;
+            return false ;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a class="menubutton" href="#menu"><img src="images/menu.png" id="menubutton" onclick="open_menu()" /></a>
+        <span id="logo">
+            <img class="vert_center hide_on_1000" src="images/xtain_sml.png" />
+            <img class="vert_center show_on_1000" src="images/xtain_xsml.png" />
+            <img class="vert_center hide_on_400" src="images/tube.png" />
+        </span>
+
+        <span id="header_text" class="hide_on_600" style="font-size:0.7em;font-style:italic;font-weight:normal;color:#630;vertical-align:super">---responsive webdesign---</span>
+        <span id="header_search" class="roundLightBorder">
+            <input id="searchfield" type="text">
+            <input id="dosearch" onclick="go_get()" style="cursor:pointer" />
+        </span>
+        <input id="btn_login" class="roundBlueButton hide_on_400" type="button" value="Anmelden" />
+    </header>
+    <nav id="navigation_list">
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="bootstrap.html">Bootstrap</a></li>
+            <li><a href="responsive.html">Responsive</a></li>
+            <li><a href="fade.html">Fade'n'Slide</a></li>
+            <li><a href="test1.html">Test4</a></li>
+        </ul>
+    </nav>
+    <section id="main_column">
+        <artile id="youtube">
+            <div class="videoWrapper" id="videoWrapper">
+                <object width="480" height="295">er8*11,2
+                    <param name="movie" value="http://www.youtube.com/v/YBK_1WrM294&hl=de&fs=1"></param>
+                    <param name="allowFullScreen" value="true"></param>
+                    <param name="allowscriptaccess" value="always"></param>
+                    <embed src="http://www.youtube.com/v/YBK_1WrM294&hl=de&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed>
+                </object>
+            </div>
+            <iframe id="youtube_iframe" style="display:none;width:100%;height:50em"></iframe>
+        </artile>
+    </section>
+    <aside>
+        <section>
+            <h4>Weitere Videos</h4>
+            <a onclick="show_tube('4gpJK_uRUrs')" style="cursor: pointer;">Bootstrap Tutorial</a>
+        </section>
+    </aside>
+    <footer>
+        <ul>
+            <li><a href="xtain.html">Copyright 2015 XTAIN oHG</a></li>
+            <li><a>Impressum</a></li>
+            <li><a>Über uns</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #aac;
+        }
+        .nav ul {
+            *zoom:1;
+            list-style:none;
+            margin:0;
+            padding:0;
+            background:#333;
+        }
+        .nav ul:before,.nav ul:after {
+            content:"";
+            display:table;
+        }
+        .nav ul:after {
+            clear:both;
+        }
+        .nav ul > li {
+            float:left;
+            position:relative;
+        }
+        .nav a {
+            display:block;
+            padding:10px 20px;
+            line-height:1.2em;
+            color:#fff;
+            border-left:1px solid #595959;
+        }
+        .nav a:hover {
+            text-decoration:none;
+            background:#595959;
+        }
+        .nav li ul {
+            background:#273754;
+        }
+        .nav li ul li {
+            width:200px;
+        }
+        .nav li ul a {
+            border:none;
+        }
+        .nav li ul a:hover {
+            background:rgba(0,0,0,0.2);
+        }
+    </style>
+    <style>
+        .nav li ul {
+            position:absolute;
+            left:0;
+            top:36px;
+            z-index:1;
+        }
+        .nav li ul li {
+            overflow:hidden;
+            height:0;
+            -webkit-transition:height 200ms ease-in;
+            -moz-transition:height 200ms ease-in;
+            -o-transition:height 200ms ease-in;
+            transition:height 200ms ease-in;
+        }
+        .nav ul > li:hover ul li {
+            height:36px;
+        }
+    </style>
+    <style>
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        .animated.hinge {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+        }
+        @-webkit-keyframes hinge {
+            0% {
+                -webkit-transform-origin: top left;
+                transform-origin: top left;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+            }
+
+            20%, 60% {
+                -webkit-transform: rotate3d(0, 0, 1, 80deg);
+                transform: rotate3d(0, 0, 1, 80deg);
+                -webkit-transform-origin: top left;
+                transform-origin: top left;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+            }
+
+            40%, 80% {
+                -webkit-transform: rotate3d(0, 0, 1, 60deg);
+                transform: rotate3d(0, 0, 1, 60deg);
+                -webkit-transform-origin: top left;
+                transform-origin: top left;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+                opacity: 1;
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 700px, 0);
+                transform: translate3d(0, 700px, 0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes hinge {
+            0% {
+                -webkit-transform-origin: top left;
+                transform-origin: top left;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+            }
+
+            20%, 60% {
+                -webkit-transform: rotate3d(0, 0, 1, 80deg);
+                transform: rotate3d(0, 0, 1, 80deg);
+                -webkit-transform-origin: top left;
+                transform-origin: top left;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+            }
+
+            40%, 80% {
+                -webkit-transform: rotate3d(0, 0, 1, 60deg);
+                transform: rotate3d(0, 0, 1, 60deg);
+                -webkit-transform-origin: top left;
+                transform-origin: top left;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+                opacity: 1;
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 700px, 0);
+                transform: translate3d(0, 700px, 0);
+                opacity: 0;
+            }
+        }
+
+        .hinge {
+            -webkit-animation-name: hinge;
+            animation-name: hinge;
+        }
+    </style>
+    <script>
+        function clickHinge(elem){
+            elem.className = elem.className + " animated hinge";
+            elem.style.zIndex = -99999;
+            elem.parentNode.style.overflow = "visible";
+        }
+    </script>
+</head>
+<body>
+<nav class="nav">
+    <ul>
+        <li>
+            <a href="#" onclick="clickHinge(this)">Nav Item</a>
+            <ul>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" onclick="clickHinge(this)">Nav Item</a>
+            <ul>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" onclick="clickHinge(this)">Nonav Item</a>
+        </li>
+        <li>
+            <a href="#" onclick="clickHinge(this)">Longnav Item</a>
+            <ul>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li><a href="#" onclick="clickHinge(this)">Subnav Item</a></li>
+                <li>
+                    <a href="#" onclick="clickHinge(this)">ExtraSubnav Item</a>
+                    <ul>
+                        <li><a href="#" onclick="clickHinge(this)">SubSub Item</a></li>
+                        <li><a href="#" onclick="clickHinge(this)">SubSub Item</a></li>
+                        <li><a href="#" onclick="clickHinge(this)">SubSub Item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div>BLAVBLAasdkshfksdhfksdjfkljsdfgklsdffgklsdfjhfgkljsdfgkldhnf</div>
+</body>
+</html>

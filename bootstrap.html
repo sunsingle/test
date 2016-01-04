@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .red{
+            color:#f55;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="container">
+    <div class="row" style="background-color:#777777;color:#fff;padding:2em;;margin:1em;border-radius: 3em;">
+        <h1>Hello, bootstrap!</h1>
+        <ul><li>Rows must be placed within a <font class="red">.container</font> (fixed-width) or <font class="red">.container-fluid</font> (full-width) for proper alignment and padding.</li>
+            <li>Use rows to create horizontal groups of columns.</li>
+            <li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
+            <li>Predefined grid classes like <font class="red">.row</font> and <font class="red">.col-xs-4</font> are available for quickly making grid layouts. Less mixins can also be used for more semantic layouts.</li>
+            <li>Columns create gutters (gaps between column content) via <font class="red">padding</font>. That padding is offset in rows for the first and last column via negative margin on <font class="red">.row</font>s.</li>
+            <li>The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.</li>
+            <li>Grid columns are created by specifying the number of twelve available columns you wish to span. For example, three equal columns would use three <font class="red">.col-xs-4</font>.</li>
+            <li>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</li>
+            <li>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, e.g. applying any <font class="red">.col-md-*</font> class to an element will not only affect its styling on medium devices but also on large devices if a <font class="red">.col-lg-*</font> class is not present.</li>
+        </ul>
+        <h4>Example below...</h4>
+        <button class="btn-danger" >DemoButton: btn_danger</button>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <h3>Class col-xs-12 col-md-6 col-lg-3</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <h3>Class col-xs-12 col-md-6 col-lg-3</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <h3>Class col-xs-12 col-md-6 col-lg-3</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <h3>Class col-xs-12 col-md-6 col-lg-3</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+        <h3>Class col-xs-4</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+        <h3>Class col-xs-12 col-md-6 col-lg-4</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+        <h3>Class col-xs-12 col-md-6 col-lg-4</h3>
+    </div>
+     <div class="col-xs-12 col-md-8">
+        <h3>Class col-xs-12 col-md-8</h3>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+        <h3>Class col-xs-12 col-xs-6 col-md-4</h3>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <h3>Class col-xs-12 col-md-6</h3>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <h3>Class col-xs-12 col-md-6</h3>
+    </div>
+    <div class="col-xs-3">
+        <h3>Class col-xs-3</h3>
+    </div>
+    <div class="col-xs-3">
+        <h3>Class col-xs-3</h3>
+    </div>
+    <div class="col-xs-6">
+        <h3>Class col-xs-6</h3>
+    </div>
+    <div class="col-xs-8">
+        <h3>Class col-xs-8</h3>
+    </div>
+    <div class="col-xs-8">
+        <h3>Class col-xs-8</h3>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-4">
+        <h3>Class col-xs-12 col-md-8 col-ms-offset-4</h3>
+    </div>
+    <hr />
+    <blockquote class="blockquote-reverse col-xs-12">
+        Class blockquote-reverse col-xs-12<br />bla bla ding dong kling klang klung dsfhsf dsfh hfshdf dfhh sjkdf sdf sdf skdhfusuhdf  fdfskdfh udfh sdhf dfuhsdiufh sd sidfuh usdhfsiud fhsfu sdufhh sdufh
+        <footer>footer included</footer>
+    </blockquote>
+    <ul class="list-inline col-xs-12"><li>Class</li><li>list</li><li>-inline</li><li>col-xs-12</li></ul>
+
+    <dl class="dl-horizontal col-xs-12">
+        <dt>Description</dt>
+        <dd>Description of element</dd>
+        <dt>dt</dt>
+        <dd>dd</dd>
+        <dt>class</dt>
+        <dd>dl-horizontal col-xs-12</dd>
+    </dl>
+    <div class="col-xs-12">
+        <strong>Keyboard</strong> element <kbd>A</kbd> or <kbd>STRG + V</kbd> for <code>&lt;kbd&gt;</code>
+    </div>
+    <div class="form-group col-xs-12 has-error">
+        <label class="control-label">Input with error</label>
+        <input type="text" class="form-group" placeholder="div class col-xs-12 has-error" value="a" />
+    </div>
+    <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess2">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label" for="inputWarning2">Input with warning</label>
+        <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+        <span id="inputWarning2Status" class="sr-only">(warning)</span>
+    </div>
+    <div class="form-group has-error has-feedback">
+        <label class="control-label" for="inputError2">Input with error</label>
+        <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span id="inputError2Status" class="sr-only">(error)</span>
+    </div>
+    <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+        </div>
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+    </div>
+    <div class="col-xs-12">
+        <img src="images/xtain_sml.png" class="img-circle" />
+    </div>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
