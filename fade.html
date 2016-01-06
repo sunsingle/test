@@ -5,7 +5,11 @@
     <title></title>
     <style>
         body{
-            background: #aac;
+            background: #ccf;
+            font-size: 100%;
+        }
+        .nav img{
+            display:none;
         }
         .nav ul {
             *zoom:1;
@@ -47,6 +51,27 @@
         }
         .nav li ul a:hover {
             background:rgba(0,0,0,0.2);
+        }
+        @media all and (max-width:500px) {
+            body{
+                font-size:70%;
+            }
+            .nav{
+                display:inline-block;
+            }
+            .nav img{
+                display:inline-block;
+                height:11px;
+            }
+            .nav ul {
+                display:none;
+            }
+            .nav ul li{
+                display:block;
+            }
+            .nav:hover ul{
+                display:inline-block;
+            }
         }
     </style>
     <style>
@@ -151,17 +176,67 @@
             -webkit-animation-name: hinge;
             animation-name: hinge;
         }
+
+        /* WebKit and Opera browsers */
+        @-webkit-keyframes spinner {
+            from { -webkit-transform: rotateY(0deg);    }
+            to   { -webkit-transform: rotateY(-360deg); }
+        }
+
+        /* all other browsers */
+        @keyframes spinner {
+            from {
+                -moz-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            to {
+                -moz-transform: rotateY(-360deg);
+                -ms-transform: rotateY(-360deg);
+                transform: rotateY(-360deg);
+            }
+        }
+        #stage {
+            margin: 1em auto;
+            -webkit-perspective: 1200px;
+            -moz-perspective: 1200px;
+            -ms-perspective: 1200px;
+            perspective: 1200px;
+        }
+        #spinner {
+            -webkit-animation-name: spinner;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 6s;
+
+            animation-name: spinner;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 6s;
+
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        #spinner:hover {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
     </style>
     <script>
         function clickHinge(elem){
             elem.className = elem.className + " animated hinge";
-            elem.style.zIndex = -99999;
+            elem.style.zIndex = 1;
+            elem.style.background = "#595959";
             elem.parentNode.style.overflow = "visible";
         }
     </script>
 </head>
 <body>
 <nav class="nav">
+    <img src="images/menu.png" />
     <ul>
         <li>
             <a href="#" onclick="clickHinge(this)">Nav Item</a>
@@ -205,6 +280,11 @@
         </li>
     </ul>
 </nav>
-<div>BLAVBLAasdkshfksdhfksdjfkljsdfgklsdffgklsdfjhfgkljsdfgkldhnf</div>
+<div id="stage">
+    <p id="spinner" style="text-align: center; color: #fff;text-align:center;">
+        <img src="images/xtain.png" onclick="clickHinge(this)" />
+    </p>
+    <p>Testinhalt viel Text wa und so und überhaupt... Tim nur Grillen - Draußen mit Flamme - Mikrowelle kocht mit Zauberei - Flamme Gut - Mikrowelle böse...</p>
+</div>
 </body>
 </html>
